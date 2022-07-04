@@ -1,0 +1,2457 @@
+{
+  "bytes": {
+    "type": "object"
+  },
+  "google.protobuf.Any": {
+    "type": "object",
+    "properties": {
+      "type_url": {
+        "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics.",
+        "type": "string"
+      },
+      "value": {
+        "description": "Must be a valid serialized protocol buffer of the above specified type.",
+        "$ref": "#/definitions/bytes"
+      }
+    }
+  },
+  "google.protobuf.Api": {
+    "type": "object",
+    "properties": {
+      "methods": {
+        "type": "array",
+        "items": {
+          "description": "The methods of this interface, in unspecified order.",
+          "$ref": "#/definitions/google.protobuf.Method"
+        }
+      },
+      "mixins": {
+        "type": "array",
+        "items": {
+          "description": "Included interfaces. See [Mixin][].",
+          "$ref": "#/definitions/google.protobuf.Mixin"
+        }
+      },
+      "name": {
+        "description": "The fully qualified name of this interface, including package name\nfollowed by the interface's simple name.",
+        "type": "string"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "Any metadata attached to the interface.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      },
+      "source_context": {
+        "description": "Source context for the protocol buffer service represented by this\nmessage.",
+        "$ref": "#/definitions/google.protobuf.SourceContext"
+      },
+      "syntax": {
+        "description": "The source syntax of the service.",
+        "$ref": "#/definitions/google.protobuf.Syntax"
+      },
+      "version": {
+        "description": "A version string for this interface. If specified, must have the form\n`major-version.minor-version`, as in `1.10`. If the minor version is\nomitted, it defaults to zero. If the entire version field is empty, the\nmajor version is derived from the package name, as outlined below. If the\nfield is not empty, the version in the package name will be verified to be\nconsistent with what is provided here.\n\nThe versioning schema uses [semantic\nversioning](http://semver.org) where the major version number\nindicates a breaking change and the minor version an additive,\nnon-breaking change. Both version numbers are signals to users\nwhat to expect from different versions, and should be carefully\nchosen based on the product plan.\n\nThe major version is also reflected in the package name of the\ninterface, which must end in `v\u003cmajor-version\u003e`, as in\n`google.feature.v1`. For major versions 0 and 1, the suffix can\nbe omitted. Zero major versions must only be used for\nexperimental, non-GA interfaces.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.BoolValue": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The bool value.",
+        "type": "boolean"
+      }
+    }
+  },
+  "google.protobuf.BytesValue": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The bytes value.",
+        "$ref": "#/definitions/bytes"
+      }
+    }
+  },
+  "google.protobuf.DescriptorProto": {
+    "type": "object",
+    "properties": {
+      "enum_type": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.EnumDescriptorProto"
+        }
+      },
+      "extension": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.FieldDescriptorProto"
+        }
+      },
+      "extension_range": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.DescriptorProto.ExtensionRange"
+        }
+      },
+      "field": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.FieldDescriptorProto"
+        }
+      },
+      "name": {
+        "type": "string"
+      },
+      "nested_type": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.DescriptorProto"
+        }
+      },
+      "oneof_decl": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.OneofDescriptorProto"
+        }
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.MessageOptions"
+      },
+      "reserved_name": {
+        "type": "array",
+        "items": {
+          "description": "Reserved field names, which may not be used by fields in the same message.\nA given name may only be reserved once.",
+          "type": "string"
+        }
+      },
+      "reserved_range": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.DescriptorProto.ReservedRange"
+        }
+      }
+    }
+  },
+  "google.protobuf.DescriptorProto.ExtensionRange": {
+    "type": "object",
+    "properties": {
+      "end": {
+        "description": "Exclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.ExtensionRangeOptions"
+      },
+      "start": {
+        "description": "Inclusive.",
+        "type": "number",
+        "format": "int32"
+      }
+    }
+  },
+  "google.protobuf.DescriptorProto.ReservedRange": {
+    "type": "object",
+    "properties": {
+      "end": {
+        "description": "Exclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "start": {
+        "description": "Inclusive.",
+        "type": "number",
+        "format": "int32"
+      }
+    }
+  },
+  "google.protobuf.DoubleValue": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The double value.",
+        "type": "number",
+        "format": "double"
+      }
+    }
+  },
+  "google.protobuf.Duration": {
+    "type": "object",
+    "properties": {
+      "nanos": {
+        "description": "Signed fractions of a second at nanosecond resolution of the span\nof time. Durations less than one second are represented with a 0\n`seconds` field and a positive or negative `nanos` field. For durations\nof one second or more, a non-zero value for the `nanos` field must be\nof the same sign as the `seconds` field. Must be from -999,999,999\nto +999,999,999 inclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "seconds": {
+        "description": "Signed seconds of the span of time. Must be from -315,576,000,000\nto +315,576,000,000 inclusive. Note: these bounds are computed from:\n60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years",
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "google.protobuf.Empty": {
+    "type": "object"
+  },
+  "google.protobuf.Enum": {
+    "type": "object",
+    "properties": {
+      "enumvalue": {
+        "type": "array",
+        "items": {
+          "description": "Enum value definitions.",
+          "$ref": "#/definitions/google.protobuf.EnumValue"
+        }
+      },
+      "name": {
+        "description": "Enum type name.",
+        "type": "string"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "Protocol buffer options.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      },
+      "source_context": {
+        "description": "The source context.",
+        "$ref": "#/definitions/google.protobuf.SourceContext"
+      },
+      "syntax": {
+        "description": "The source syntax.",
+        "$ref": "#/definitions/google.protobuf.Syntax"
+      }
+    }
+  },
+  "google.protobuf.EnumDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.EnumOptions"
+      },
+      "reserved_name": {
+        "type": "array",
+        "items": {
+          "description": "Reserved enum value names, which may not be reused. A given name may only\nbe reserved once.",
+          "type": "string"
+        }
+      },
+      "reserved_range": {
+        "type": "array",
+        "items": {
+          "description": "Range of reserved numeric values. Reserved numeric values may not be used\nby enum values in the same enum declaration. Reserved ranges may not\noverlap.",
+          "$ref": "#/definitions/google.protobuf.EnumDescriptorProto.EnumReservedRange"
+        }
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.EnumValueDescriptorProto"
+        }
+      }
+    }
+  },
+  "google.protobuf.EnumDescriptorProto.EnumReservedRange": {
+    "type": "object",
+    "properties": {
+      "end": {
+        "description": "Inclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "start": {
+        "description": "Inclusive.",
+        "type": "number",
+        "format": "int32"
+      }
+    }
+  },
+  "google.protobuf.EnumOptions": {
+    "type": "object",
+    "properties": {
+      "allow_alias": {
+        "description": "Set this option to true to allow mapping different tag names to the same\nvalue.",
+        "type": "boolean"
+      },
+      "deprecated": {
+        "description": "Is this enum deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor the enum, or it will be completely ignored; in the very least, this\nis a formalization for deprecating enums.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.EnumValue": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "Enum value name.",
+        "type": "string"
+      },
+      "number": {
+        "description": "Enum value number.",
+        "type": "number",
+        "format": "int32"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "Protocol buffer options.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      }
+    }
+  },
+  "google.protobuf.EnumValueDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "number": {
+        "type": "number",
+        "format": "int32"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.EnumValueOptions"
+      }
+    }
+  },
+  "google.protobuf.EnumValueOptions": {
+    "type": "object",
+    "properties": {
+      "deprecated": {
+        "description": "Is this enum value deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor the enum value, or it will be completely ignored; in the very least,\nthis is a formalization for deprecating enum values.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.ExtensionRangeOptions": {
+    "type": "object",
+    "properties": {
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.Field": {
+    "type": "object",
+    "properties": {
+      "cardinality": {
+        "description": "The field cardinality.",
+        "$ref": "#/definitions/google.protobuf.Field.Cardinality"
+      },
+      "default_value": {
+        "description": "The string value of the default value of this field. Proto2 syntax only.",
+        "type": "string"
+      },
+      "json_name": {
+        "description": "The field JSON name.",
+        "type": "string"
+      },
+      "kind": {
+        "description": "The field type.",
+        "$ref": "#/definitions/google.protobuf.Field.Kind"
+      },
+      "name": {
+        "description": "The field name.",
+        "type": "string"
+      },
+      "number": {
+        "description": "The field number.",
+        "type": "number",
+        "format": "int32"
+      },
+      "oneof_index": {
+        "description": "The index of the field type in `Type.oneofs`, for message or enumeration\ntypes. The first type has index 1; zero means the type is not in the list.",
+        "type": "number",
+        "format": "int32"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "The protocol buffer options.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      },
+      "packed": {
+        "description": "Whether to use alternative packed wire representation.",
+        "type": "boolean"
+      },
+      "type_url": {
+        "description": "The field type URL, without the scheme, for message or enumeration\ntypes. Example: `\"type.googleapis.com/google.protobuf.Timestamp\"`.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.Field.Cardinality": {
+    "description": "Whether a field is optional, required, or repeated.",
+    "type": "string",
+    "default": "CARDINALITY_UNKNOWN",
+    "enum": [
+      "CARDINALITY_UNKNOWN",
+      "CARDINALITY_OPTIONAL",
+      "CARDINALITY_REQUIRED",
+      "CARDINALITY_REPEATED"
+    ]
+  },
+  "google.protobuf.Field.Kind": {
+    "description": "Basic field types.",
+    "type": "string",
+    "default": "TYPE_UNKNOWN",
+    "enum": [
+      "TYPE_UNKNOWN",
+      "TYPE_DOUBLE",
+      "TYPE_FLOAT",
+      "TYPE_INT64",
+      "TYPE_UINT64",
+      "TYPE_INT32",
+      "TYPE_FIXED64",
+      "TYPE_FIXED32",
+      "TYPE_BOOL",
+      "TYPE_STRING",
+      "TYPE_GROUP",
+      "TYPE_MESSAGE",
+      "TYPE_BYTES",
+      "TYPE_UINT32",
+      "TYPE_ENUM",
+      "TYPE_SFIXED32",
+      "TYPE_SFIXED64",
+      "TYPE_SINT32",
+      "TYPE_SINT64"
+    ]
+  },
+  "google.protobuf.FieldDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "default_value": {
+        "description": "For numeric types, contains the original text representation of the value.\nFor booleans, \"true\" or \"false\".\nFor strings, contains the default text contents (not escaped in any way).\nFor bytes, contains the C escaped value.  All bytes \u003e= 128 are escaped.\nTODO(kenton):  Base-64 encode?",
+        "type": "string"
+      },
+      "extendee": {
+        "description": "For extensions, this is the name of the type being extended.  It is\nresolved in the same manner as type_name.",
+        "type": "string"
+      },
+      "json_name": {
+        "description": "JSON name of this field. The value is set by protocol compiler. If the\nuser has set a \"json_name\" option on this field, that option's value\nwill be used. Otherwise, it's deduced from the field's name by converting\nit to camelCase.",
+        "type": "string"
+      },
+      "label": {
+        "$ref": "#/definitions/google.protobuf.FieldDescriptorProto.Label"
+      },
+      "name": {
+        "type": "string"
+      },
+      "number": {
+        "type": "number",
+        "format": "int32"
+      },
+      "oneof_index": {
+        "description": "If set, gives the index of a oneof in the containing type's oneof_decl\nlist.  This field is a member of that oneof.",
+        "type": "number",
+        "format": "int32"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.FieldOptions"
+      },
+      "proto3_optional": {
+        "description": "If true, this is a proto3 \"optional\". When a proto3 field is optional, it\ntracks presence regardless of field type.\n\nWhen proto3_optional is true, this field must be belong to a oneof to\nsignal to old proto3 clients that presence is tracked for this field. This\noneof is known as a \"synthetic\" oneof, and this field must be its sole\nmember (each proto3 optional field gets its own synthetic oneof). Synthetic\noneofs exist in the descriptor only, and do not generate any API. Synthetic\noneofs must be ordered after all \"real\" oneofs.\n\nFor message fields, proto3_optional doesn't create any semantic change,\nsince non-repeated message fields always track presence. However it still\nindicates the semantic detail of whether the user wrote \"optional\" or not.\nThis can be useful for round-tripping the .proto file. For consistency we\ngive message fields a synthetic oneof also, even though it is not required\nto track presence. This is especially important because the parser can't\ntell if a field is a message or an enum, so it must always create a\nsynthetic oneof.\n\nProto2 optional fields do not set this flag, because they already indicate\noptional with `LABEL_OPTIONAL`.",
+        "type": "boolean"
+      },
+      "type": {
+        "description": "If type_name is set, this need not be set.  If both this and type_name\nare set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.",
+        "$ref": "#/definitions/google.protobuf.FieldDescriptorProto.Type"
+      },
+      "type_name": {
+        "description": "For message and enum types, this is the name of the type.  If the name\nstarts with a '.', it is fully-qualified.  Otherwise, C++-like scoping\nrules are used to find the type (i.e. first the nested types within this\nmessage are searched, then within the parent, on up to the root\nnamespace).",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.FieldDescriptorProto.Label": {
+    "type": "string",
+    "default": "LABEL_OPTIONAL",
+    "enum": [
+      "LABEL_OPTIONAL",
+      "LABEL_REQUIRED",
+      "LABEL_REPEATED"
+    ]
+  },
+  "google.protobuf.FieldDescriptorProto.Type": {
+    "type": "string",
+    "default": "TYPE_DOUBLE",
+    "enum": [
+      "TYPE_DOUBLE",
+      "TYPE_FLOAT",
+      "TYPE_INT64",
+      "TYPE_UINT64",
+      "TYPE_INT32",
+      "TYPE_FIXED64",
+      "TYPE_FIXED32",
+      "TYPE_BOOL",
+      "TYPE_STRING",
+      "TYPE_GROUP",
+      "TYPE_MESSAGE",
+      "TYPE_BYTES",
+      "TYPE_UINT32",
+      "TYPE_ENUM",
+      "TYPE_SFIXED32",
+      "TYPE_SFIXED64",
+      "TYPE_SINT32",
+      "TYPE_SINT64"
+    ]
+  },
+  "google.protobuf.FieldMask": {
+    "type": "object",
+    "properties": {
+      "paths": {
+        "type": "array",
+        "items": {
+          "description": "The set of field mask paths.",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "google.protobuf.FieldOptions": {
+    "type": "object",
+    "properties": {
+      "ctype": {
+        "description": "The ctype option instructs the C++ code generator to use a different\nrepresentation of the field than it normally would.  See the specific\noptions below.  This option is not yet implemented in the open source\nrelease -- sorry, we'll try to include it in a future version!",
+        "default": "STRING",
+        "$ref": "#/definitions/google.protobuf.FieldOptions.CType"
+      },
+      "deprecated": {
+        "description": "Is this field deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor accessors, or it will be completely ignored; in the very least, this\nis a formalization for deprecating fields.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "jstype": {
+        "description": "The jstype option determines the JavaScript type used for values of the\nfield.  The option is permitted only for 64 bit integral and fixed types\n(int64, uint64, sint64, fixed64, sfixed64).  A field with jstype JS_STRING\nis represented as JavaScript string, which avoids loss of precision that\ncan happen when a large value is converted to a floating point JavaScript.\nSpecifying JS_NUMBER for the jstype causes the generated JavaScript code to\nuse the JavaScript \"number\" type.  The behavior of the default option\nJS_NORMAL is implementation dependent.\n\nThis option is an enum to permit additional types to be added, e.g.\ngoog.math.Integer.",
+        "default": "JS_NORMAL",
+        "$ref": "#/definitions/google.protobuf.FieldOptions.JSType"
+      },
+      "lazy": {
+        "description": "Should this field be parsed lazily?  Lazy applies only to message-type\nfields.  It means that when the outer message is initially parsed, the\ninner message's contents will not be parsed but instead stored in encoded\nform.  The inner message will actually be parsed when it is first accessed.\n\nThis is only a hint.  Implementations are free to choose whether to use\neager or lazy parsing regardless of the value of this option.  However,\nsetting this option true suggests that the protocol author believes that\nusing lazy parsing on this field is worth the additional bookkeeping\noverhead typically needed to implement it.\n\nThis option does not affect the public interface of any generated code;\nall method signatures remain the same.  Furthermore, thread-safety of the\ninterface is not affected by this option; const methods remain safe to\ncall from multiple threads concurrently, while non-const methods continue\nto require exclusive access.\n\n\nNote that implementations may choose not to check required fields within\na lazy sub-message.  That is, calling IsInitialized() on the outer message\nmay return true even if the inner message has missing required fields.\nThis is necessary because otherwise the inner message would have to be\nparsed in order to perform the check, defeating the purpose of lazy\nparsing.  An implementation which chooses not to check required fields\nmust be consistent about it.  That is, for any particular sub-message, the\nimplementation must either *always* check its required fields, or *never*\ncheck its required fields, regardless of whether or not the message has\nbeen parsed.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "packed": {
+        "description": "The packed option can be enabled for repeated primitive fields to enable\na more efficient representation on the wire. Rather than repeatedly\nwriting the tag and type for each element, the entire array is encoded as\na single length-delimited blob. In proto3, only explicit setting it to\nfalse will avoid using packed encoding.",
+        "type": "boolean"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      },
+      "weak": {
+        "description": "For Google-internal migration only. Do not use.",
+        "type": "boolean",
+        "default": "false"
+      }
+    }
+  },
+  "google.protobuf.FieldOptions.CType": {
+    "type": "string",
+    "default": "STRING",
+    "enum": [
+      "STRING",
+      "CORD",
+      "STRING_PIECE"
+    ]
+  },
+  "google.protobuf.FieldOptions.JSType": {
+    "type": "string",
+    "default": "JS_NORMAL",
+    "enum": [
+      "JS_NORMAL",
+      "JS_STRING",
+      "JS_NUMBER"
+    ]
+  },
+  "google.protobuf.FileDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "dependency": {
+        "type": "array",
+        "items": {
+          "description": "Names of files imported by this file.",
+          "type": "string"
+        }
+      },
+      "enum_type": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.EnumDescriptorProto"
+        }
+      },
+      "extension": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.FieldDescriptorProto"
+        }
+      },
+      "message_type": {
+        "type": "array",
+        "items": {
+          "description": "All top-level definitions in this file.",
+          "$ref": "#/definitions/google.protobuf.DescriptorProto"
+        }
+      },
+      "name": {
+        "description": "file name, relative to root of source tree",
+        "type": "string"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.FileOptions"
+      },
+      "package": {
+        "description": "e.g. \"foo\", \"foo.bar\", etc.",
+        "type": "string"
+      },
+      "public_dependency": {
+        "type": "array",
+        "items": {
+          "description": "Indexes of the public imported files in the dependency list above.",
+          "type": "number",
+          "format": "int32"
+        }
+      },
+      "service": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.ServiceDescriptorProto"
+        }
+      },
+      "source_code_info": {
+        "description": "This field contains optional information about the original source code.\nYou may safely remove this entire field without harming runtime\nfunctionality of the descriptors -- the information is needed only by\ndevelopment tools.",
+        "$ref": "#/definitions/google.protobuf.SourceCodeInfo"
+      },
+      "syntax": {
+        "description": "The syntax of the proto file.\nThe supported values are \"proto2\" and \"proto3\".",
+        "type": "string"
+      },
+      "weak_dependency": {
+        "type": "array",
+        "items": {
+          "description": "Indexes of the weak imported files in the dependency list.\nFor Google-internal migration only. Do not use.",
+          "type": "number",
+          "format": "int32"
+        }
+      }
+    }
+  },
+  "google.protobuf.FileDescriptorSet": {
+    "type": "object",
+    "properties": {
+      "file": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.FileDescriptorProto"
+        }
+      }
+    }
+  },
+  "google.protobuf.FileOptions": {
+    "type": "object",
+    "properties": {
+      "cc_enable_arenas": {
+        "description": "Enables the use of arenas for the proto messages in this file. This applies\nonly to generated classes for C++.",
+        "type": "boolean",
+        "default": "true"
+      },
+      "cc_generic_services": {
+        "description": "Should generic services be generated in each language?  \"Generic\" services\nare not specific to any particular RPC system.  They are generated by the\nmain code generators in each language (without additional plugins).\nGeneric services were the only kind of service generation supported by\nearly versions of google.protobuf.\n\nGeneric services are now considered deprecated in favor of using plugins\nthat generate code specific to your particular RPC system.  Therefore,\nthese default to false.  Old code which depends on generic services should\nexplicitly set them to true.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "csharp_namespace": {
+        "description": "Namespace for generated classes; defaults to the package.",
+        "type": "string"
+      },
+      "deprecated": {
+        "description": "Is this file deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor everything in the file, or it will be completely ignored; in the very\nleast, this is a formalization for deprecating files.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "go_package": {
+        "description": "Sets the Go package where structs generated from this .proto will be\nplaced. If omitted, the Go package will be derived from the following:\n  - The basename of the package import path, if provided.\n  - Otherwise, the package statement in the .proto file, if present.\n  - Otherwise, the basename of the .proto file, without extension.",
+        "type": "string"
+      },
+      "java_generate_equals_and_hash": {
+        "description": "This option does nothing.",
+        "type": "boolean"
+      },
+      "java_generic_services": {
+        "type": "boolean",
+        "default": "false"
+      },
+      "java_multiple_files": {
+        "description": "If set true, then the Java code generator will generate a separate .java\nfile for each top-level message, enum, and service defined in the .proto\nfile.  Thus, these types will *not* be nested inside the outer class\nnamed by java_outer_classname.  However, the outer class will still be\ngenerated to contain the file's getDescriptor() method as well as any\ntop-level extensions defined in the file.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "java_outer_classname": {
+        "description": "If set, all the classes from the .proto file are wrapped in a single\nouter class with the given name.  This applies to both Proto1\n(equivalent to the old \"--one_java_file\" option) and Proto2 (where\na .proto always translates to a single class, but you may want to\nexplicitly choose the class name).",
+        "type": "string"
+      },
+      "java_package": {
+        "description": "Sets the Java package where classes generated from this .proto will be\nplaced.  By default, the proto package is used, but this is often\ninappropriate because proto packages do not normally start with backwards\ndomain names.",
+        "type": "string"
+      },
+      "java_string_check_utf8": {
+        "description": "If set true, then the Java2 code generator will generate code that\nthrows an exception whenever an attempt is made to assign a non-UTF-8\nbyte sequence to a string field.\nMessage reflection will do the same.\nHowever, an extension field still accepts non-UTF-8 byte sequences.\nThis option has no effect on when used with the lite runtime.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "objc_class_prefix": {
+        "description": "Sets the objective c class prefix which is prepended to all objective c\ngenerated classes from this .proto. There is no default.",
+        "type": "string"
+      },
+      "optimize_for": {
+        "default": "SPEED",
+        "$ref": "#/definitions/google.protobuf.FileOptions.OptimizeMode"
+      },
+      "php_class_prefix": {
+        "description": "Sets the php class prefix which is prepended to all php generated classes\nfrom this .proto. Default is empty.",
+        "type": "string"
+      },
+      "php_generic_services": {
+        "type": "boolean",
+        "default": "false"
+      },
+      "php_metadata_namespace": {
+        "description": "Use this option to change the namespace of php generated metadata classes.\nDefault is empty. When this option is empty, the proto file name will be\nused for determining the namespace.",
+        "type": "string"
+      },
+      "php_namespace": {
+        "description": "Use this option to change the namespace of php generated classes. Default\nis empty. When this option is empty, the package name will be used for\ndetermining the namespace.",
+        "type": "string"
+      },
+      "py_generic_services": {
+        "type": "boolean",
+        "default": "false"
+      },
+      "ruby_package": {
+        "description": "Use this option to change the package of ruby generated classes. Default\nis empty. When this option is not set, the package name will be used for\ndetermining the ruby package.",
+        "type": "string"
+      },
+      "swift_prefix": {
+        "description": "By default Swift generators will take the proto package and CamelCase it\nreplacing '.' with underscore and use that to prefix the types/symbols\ndefined. When this options is provided, they will use this value instead\nto prefix the types/symbols defined.",
+        "type": "string"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here.\nSee the documentation for the \"Options\" section above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.FileOptions.OptimizeMode": {
+    "description": "Generated classes can be optimized for speed or code size.",
+    "type": "string",
+    "default": "SPEED",
+    "enum": [
+      "SPEED",
+      "CODE_SIZE",
+      "LITE_RUNTIME"
+    ]
+  },
+  "google.protobuf.FloatValue": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The float value.",
+        "type": "number",
+        "format": "float"
+      }
+    }
+  },
+  "google.protobuf.GeneratedCodeInfo": {
+    "type": "object",
+    "properties": {
+      "annotation": {
+        "type": "array",
+        "items": {
+          "description": "An Annotation connects some span of text in generated code to an element\nof its generating .proto file.",
+          "$ref": "#/definitions/google.protobuf.GeneratedCodeInfo.Annotation"
+        }
+      }
+    }
+  },
+  "google.protobuf.GeneratedCodeInfo.Annotation": {
+    "type": "object",
+    "properties": {
+      "begin": {
+        "description": "Identifies the starting offset in bytes in the generated code\nthat relates to the identified object.",
+        "type": "number",
+        "format": "int32"
+      },
+      "end": {
+        "description": "Identifies the ending offset in bytes in the generated code that\nrelates to the identified offset. The end offset should be one past\nthe last relevant byte (so the length of the text = end - begin).",
+        "type": "number",
+        "format": "int32"
+      },
+      "path": {
+        "type": "array",
+        "items": {
+          "description": "Identifies the element in the original source .proto file. This field\nis formatted the same as SourceCodeInfo.Location.path.",
+          "type": "number",
+          "format": "int32"
+        }
+      },
+      "source_file": {
+        "description": "Identifies the filesystem path to the original source .proto.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.Int32Value": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The int32 value.",
+        "type": "number",
+        "format": "int32"
+      }
+    }
+  },
+  "google.protobuf.Int64Value": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The int64 value.",
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "google.protobuf.ListValue": {
+    "type": "object",
+    "properties": {
+      "values": {
+        "type": "array",
+        "items": {
+          "description": "Repeated field of dynamically typed values.",
+          "$ref": "#/definitions/google.protobuf.Value"
+        }
+      }
+    }
+  },
+  "google.protobuf.MessageOptions": {
+    "type": "object",
+    "properties": {
+      "deprecated": {
+        "description": "Is this message deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor the message, or it will be completely ignored; in the very least,\nthis is a formalization for deprecating messages.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "map_entry": {
+        "description": "Whether the message is an automatically generated map entry type for the\nmaps field.\n\nFor maps fields:\n    map\u003cKeyType, ValueType\u003e map_field = 1;\nThe parsed descriptor looks like:\n    message MapFieldEntry {\n        option map_entry = true;\n        optional KeyType key = 1;\n        optional ValueType value = 2;\n    }\n    repeated MapFieldEntry map_field = 1;\n\nImplementations may choose not to generate the map_entry=true message, but\nuse a native map in the target language to hold the keys and values.\nThe reflection APIs in such implementations still need to work as\nif the field is a repeated message field.\n\nNOTE: Do not set the option in .proto files. Always use the maps syntax\ninstead. The option should only be implicitly set by the proto compiler\nparser.",
+        "type": "boolean"
+      },
+      "message_set_wire_format": {
+        "description": "Set true to use the old proto1 MessageSet wire format for extensions.\nThis is provided for backwards-compatibility with the MessageSet wire\nformat.  You should not use this for any other reason:  It's less\nefficient, has fewer features, and is more complicated.\n\nThe message must be defined exactly as follows:\n  message Foo {\n    option message_set_wire_format = true;\n    extensions 4 to max;\n  }\nNote that the message cannot have any defined fields; MessageSets only\nhave extensions.\n\nAll extensions of your type must be singular messages; e.g. they cannot\nbe int32s, enums, or repeated messages.\n\nBecause this is an option, the above two restrictions are not enforced by\nthe protocol compiler.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "no_standard_descriptor_accessor": {
+        "description": "Disables the generation of the standard \"descriptor()\" accessor, which can\nconflict with a field of the same name.  This is meant to make migration\nfrom proto1 easier; new code should avoid fields named \"descriptor\".",
+        "type": "boolean",
+        "default": "false"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.Method": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The simple name of this method.",
+        "type": "string"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "Any metadata attached to the method.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      },
+      "request_streaming": {
+        "description": "If true, the request is streamed.",
+        "type": "boolean"
+      },
+      "request_type_url": {
+        "description": "A URL of the input message type.",
+        "type": "string"
+      },
+      "response_streaming": {
+        "description": "If true, the response is streamed.",
+        "type": "boolean"
+      },
+      "response_type_url": {
+        "description": "The URL of the output message type.",
+        "type": "string"
+      },
+      "syntax": {
+        "description": "The source syntax of this method.",
+        "$ref": "#/definitions/google.protobuf.Syntax"
+      }
+    }
+  },
+  "google.protobuf.MethodDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "client_streaming": {
+        "description": "Identifies if client streams multiple client messages",
+        "type": "boolean",
+        "default": "false"
+      },
+      "input_type": {
+        "description": "Input and output type names.  These are resolved in the same way as\nFieldDescriptorProto.type_name, but must refer to a message type.",
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.MethodOptions"
+      },
+      "output_type": {
+        "type": "string"
+      },
+      "server_streaming": {
+        "description": "Identifies if server streams multiple server messages",
+        "type": "boolean",
+        "default": "false"
+      }
+    }
+  },
+  "google.protobuf.MethodOptions": {
+    "type": "object",
+    "properties": {
+      "deprecated": {
+        "description": "Is this method deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor the method, or it will be completely ignored; in the very least,\nthis is a formalization for deprecating methods.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "idempotency_level": {
+        "default": "IDEMPOTENCY_UNKNOWN",
+        "$ref": "#/definitions/google.protobuf.MethodOptions.IdempotencyLevel"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.MethodOptions.IdempotencyLevel": {
+    "description": "Is this method side-effect-free (or safe in HTTP parlance), or idempotent,\nor neither? HTTP based RPC implementation may choose GET verb for safe\nmethods, and PUT verb for idempotent methods instead of the default POST.",
+    "type": "string",
+    "default": "IDEMPOTENCY_UNKNOWN",
+    "enum": [
+      "IDEMPOTENCY_UNKNOWN",
+      "NO_SIDE_EFFECTS",
+      "IDEMPOTENT"
+    ]
+  },
+  "google.protobuf.Mixin": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The fully qualified name of the interface which is included.",
+        "type": "string"
+      },
+      "root": {
+        "description": "If non-empty specifies a path under which inherited HTTP paths\nare rooted.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.NullValue": {
+    "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.",
+    "type": "string",
+    "default": "NULL_VALUE",
+    "enum": [
+      "NULL_VALUE"
+    ]
+  },
+  "google.protobuf.OneofDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.OneofOptions"
+      }
+    }
+  },
+  "google.protobuf.OneofOptions": {
+    "type": "object",
+    "properties": {
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.Option": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The option's name. For protobuf built-in options (options defined in\ndescriptor.proto), this is the short name. For example, `\"map_entry\"`.\nFor custom options, it should be the fully-qualified name. For example,\n`\"google.api.http\"`.",
+        "type": "string"
+      },
+      "value": {
+        "description": "The option's value packed in an Any message. If the value is a primitive,\nthe corresponding wrapper type defined in google/protobuf/wrappers.proto\nshould be used. If the value is an enum, it should be stored as an int32\nvalue using the google.protobuf.Int32Value type.",
+        "$ref": "#/definitions/google.protobuf.Any"
+      }
+    }
+  },
+  "google.protobuf.ServiceDescriptorProto": {
+    "type": "object",
+    "properties": {
+      "method": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.MethodDescriptorProto"
+        }
+      },
+      "name": {
+        "type": "string"
+      },
+      "options": {
+        "$ref": "#/definitions/google.protobuf.ServiceOptions"
+      }
+    }
+  },
+  "google.protobuf.ServiceOptions": {
+    "type": "object",
+    "properties": {
+      "deprecated": {
+        "description": "Is this service deprecated?\nDepending on the target platform, this can emit Deprecated annotations\nfor the service, or it will be completely ignored; in the very least,\nthis is a formalization for deprecating services.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "uninterpreted_option": {
+        "type": "array",
+        "items": {
+          "description": "The parser stores options it doesn't recognize here. See above.",
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption"
+        }
+      }
+    }
+  },
+  "google.protobuf.SourceCodeInfo": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "array",
+        "items": {
+          "description": "A Location identifies a piece of source code in a .proto file which\ncorresponds to a particular definition.  This information is intended\nto be useful to IDEs, code indexers, documentation generators, and similar\ntools.\n\nFor example, say we have a file like:\n  message Foo {\n    optional string foo = 1;\n  }\nLet's look at just the field definition:\n  optional string foo = 1;\n  ^       ^^     ^^  ^  ^^^\n  a       bc     de  f  ghi\nWe have the following locations:\n  span   path               represents\n  [a,i)  [ 4, 0, 2, 0 ]     The whole field definition.\n  [a,b)  [ 4, 0, 2, 0, 4 ]  The label (optional).\n  [c,d)  [ 4, 0, 2, 0, 5 ]  The type (string).\n  [e,f)  [ 4, 0, 2, 0, 1 ]  The name (foo).\n  [g,h)  [ 4, 0, 2, 0, 3 ]  The number (1).\n\nNotes:\n- A location may refer to a repeated field itself (i.e. not to any\n  particular index within it).  This is used whenever a set of elements are\n  logically enclosed in a single code segment.  For example, an entire\n  extend block (possibly containing multiple extension definitions) will\n  have an outer location whose path refers to the \"extensions\" repeated\n  field without an index.\n- Multiple locations may have the same path.  This happens when a single\n  logical declaration is spread out across multiple places.  The most\n  obvious example is the \"extend\" block again -- there may be multiple\n  extend blocks in the same scope, each of which will have the same path.\n- A location's span is not always a subset of its parent's span.  For\n  example, the \"extendee\" of an extension declaration appears at the\n  beginning of the \"extend\" block and is shared by all extensions within\n  the block.\n- Just because a location's span is a subset of some other location's span\n  does not mean that it is a descendant.  For example, a \"group\" defines\n  both a type and a field in a single declaration.  Thus, the locations\n  corresponding to the type and field and their components will overlap.\n- Code which tries to interpret locations should probably be designed to\n  ignore those that it doesn't understand, as more types of locations could\n  be recorded in the future.",
+          "$ref": "#/definitions/google.protobuf.SourceCodeInfo.Location"
+        }
+      }
+    }
+  },
+  "google.protobuf.SourceCodeInfo.Location": {
+    "type": "object",
+    "properties": {
+      "leading_comments": {
+        "description": "If this SourceCodeInfo represents a complete declaration, these are any\ncomments appearing before and after the declaration which appear to be\nattached to the declaration.\n\nA series of line comments appearing on consecutive lines, with no other\ntokens appearing on those lines, will be treated as a single comment.\n\nleading_detached_comments will keep paragraphs of comments that appear\nbefore (but not connected to) the current element. Each paragraph,\nseparated by empty lines, will be one comment element in the repeated\nfield.\n\nOnly the comment content is provided; comment markers (e.g. //) are\nstripped out.  For block comments, leading whitespace and an asterisk\nwill be stripped from the beginning of each line other than the first.\nNewlines are included in the output.\n\nExamples:\n\n  optional int32 foo = 1;  // Comment attached to foo.\n  // Comment attached to bar.\n  optional int32 bar = 2;\n\n  optional string baz = 3;\n  // Comment attached to baz.\n  // Another line attached to baz.\n\n  // Comment attached to qux.\n  //\n  // Another line attached to qux.\n  optional double qux = 4;\n\n  // Detached comment for corge. This is not leading or trailing comments\n  // to qux or corge because there are blank lines separating it from\n  // both.\n\n  // Detached comment for corge paragraph 2.\n\n  optional string corge = 5;\n  /* Block comment attached\n   * to corge.  Leading asterisks\n   * will be removed. */\n  /* Block comment attached to\n   * grault. */\n  optional int32 grault = 6;\n\n  // ignored detached comments.",
+        "type": "string"
+      },
+      "leading_detached_comments": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "path": {
+        "type": "array",
+        "items": {
+          "description": "Identifies which part of the FileDescriptorProto was defined at this\nlocation.\n\nEach element is a field number or an index.  They form a path from\nthe root FileDescriptorProto to the place where the definition.  For\nexample, this path:\n  [ 4, 3, 2, 7, 1 ]\nrefers to:\n  file.message_type(3)  // 4, 3\n      .field(7)         // 2, 7\n      .name()           // 1\nThis is because FileDescriptorProto.message_type has field number 4:\n  repeated DescriptorProto message_type = 4;\nand DescriptorProto.field has field number 2:\n  repeated FieldDescriptorProto field = 2;\nand FieldDescriptorProto.name has field number 1:\n  optional string name = 1;\n\nThus, the above path gives the location of a field name.  If we removed\nthe last element:\n  [ 4, 3, 2, 7 ]\nthis path refers to the whole field declaration (from the beginning\nof the label to the terminating semicolon).",
+          "type": "number",
+          "format": "int32"
+        }
+      },
+      "span": {
+        "type": "array",
+        "items": {
+          "description": "Always has exactly three or four elements: start line, start column,\nend line (optional, otherwise assumed same as start line), end column.\nThese are packed into a single field for efficiency.  Note that line\nand column numbers are zero-based -- typically you will want to add\n1 to each before displaying to a user.",
+          "type": "number",
+          "format": "int32"
+        }
+      },
+      "trailing_comments": {
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.SourceContext": {
+    "type": "object",
+    "properties": {
+      "file_name": {
+        "description": "The path-qualified name of the .proto file that contained the associated\nprotobuf element.  For example: `\"google/protobuf/source_context.proto\"`.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.StringValue": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The string value.",
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.Struct": {
+    "type": "object",
+    "properties": {
+      "fields": {
+        "type": "array",
+        "items": {
+          "description": "Unordered map of dynamically typed values.",
+          "$ref": "#/definitions/google.protobuf.Struct.FieldsEntry"
+        }
+      }
+    }
+  },
+  "google.protobuf.Struct.FieldsEntry": {
+    "type": "object",
+    "properties": {
+      "key": {
+        "type": "string"
+      },
+      "value": {
+        "$ref": "#/definitions/google.protobuf.Value"
+      }
+    }
+  },
+  "google.protobuf.Syntax": {
+    "description": "The syntax in which a protocol buffer element is defined.",
+    "type": "string",
+    "default": "SYNTAX_PROTO2",
+    "enum": [
+      "SYNTAX_PROTO2",
+      "SYNTAX_PROTO3"
+    ]
+  },
+  "google.protobuf.Timestamp": {
+    "type": "object",
+    "properties": {
+      "nanos": {
+        "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "seconds": {
+        "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "google.protobuf.Type": {
+    "type": "object",
+    "properties": {
+      "fields": {
+        "type": "array",
+        "items": {
+          "description": "The list of fields.",
+          "$ref": "#/definitions/google.protobuf.Field"
+        }
+      },
+      "name": {
+        "description": "The fully qualified message name.",
+        "type": "string"
+      },
+      "oneofs": {
+        "type": "array",
+        "items": {
+          "description": "The list of types appearing in `oneof` definitions in this type.",
+          "type": "string"
+        }
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "description": "The protocol buffer options.",
+          "$ref": "#/definitions/google.protobuf.Option"
+        }
+      },
+      "source_context": {
+        "description": "The source context.",
+        "$ref": "#/definitions/google.protobuf.SourceContext"
+      },
+      "syntax": {
+        "description": "The source syntax.",
+        "$ref": "#/definitions/google.protobuf.Syntax"
+      }
+    }
+  },
+  "google.protobuf.UInt32Value": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The uint32 value.",
+        "type": "number",
+        "format": "uint32"
+      }
+    }
+  },
+  "google.protobuf.UInt64Value": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "The uint64 value.",
+        "$ref": "#/definitions/uint64"
+      }
+    }
+  },
+  "google.protobuf.UninterpretedOption": {
+    "type": "object",
+    "properties": {
+      "aggregate_value": {
+        "type": "string"
+      },
+      "double_value": {
+        "type": "number",
+        "format": "double"
+      },
+      "identifier_value": {
+        "description": "The value of the uninterpreted option, in whatever type the tokenizer\nidentified it as during parsing. Exactly one of these should be set.",
+        "type": "string"
+      },
+      "name": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/google.protobuf.UninterpretedOption.NamePart"
+        }
+      },
+      "negative_int_value": {
+        "type": "string",
+        "format": "int64"
+      },
+      "positive_int_value": {
+        "$ref": "#/definitions/uint64"
+      },
+      "string_value": {
+        "$ref": "#/definitions/bytes"
+      }
+    }
+  },
+  "google.protobuf.UninterpretedOption.NamePart": {
+    "type": "object",
+    "properties": {
+      "is_extension": {
+        "type": "boolean"
+      },
+      "name_part": {
+        "type": "string"
+      }
+    }
+  },
+  "google.protobuf.Value": {
+    "type": "object",
+    "properties": {
+      "bool_value": {
+        "description": "Represents a boolean value.",
+        "type": "boolean"
+      },
+      "list_value": {
+        "description": "Represents a repeated `Value`.",
+        "$ref": "#/definitions/google.protobuf.ListValue"
+      },
+      "null_value": {
+        "description": "Represents a null value.",
+        "$ref": "#/definitions/google.protobuf.NullValue"
+      },
+      "number_value": {
+        "description": "Represents a double value.",
+        "type": "number",
+        "format": "double"
+      },
+      "string_value": {
+        "description": "Represents a string value.",
+        "type": "string"
+      },
+      "struct_value": {
+        "description": "Represents a structured value.",
+        "$ref": "#/definitions/google.protobuf.Struct"
+      }
+    }
+  },
+  "proto.AdUnit": {
+    "type": "object",
+    "properties": {
+      "ad_slot_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "available_base_ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.BaseAdUnit"
+        }
+      },
+      "base_ad_unit": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/wtypes.Int64"
+        }
+      },
+      "base_ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.BaseAdUnit"
+        }
+      },
+      "base_slot_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "budget_exempt": {
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "created_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "data_provider_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "default_duration": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "exclude_from_invoice": {
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "height": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "is_tracking_only": {
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "parent_ad_unit_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "parent_ad_unit_name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "position_in_slot": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_sequence": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "width": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.AdUnitGroup": {
+    "type": "object",
+    "properties": {
+      "ad_units": {
+        "$ref": "#/definitions/proto.SimpleAdUnitList"
+      },
+      "base_slot_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      }
+    }
+  },
+  "proto.AdUnitGroupItems": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "ad_unit_groups": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.AdUnitGroup"
+        }
+      }
+    }
+  },
+  "proto.AdUnitGroupRequestBody": {
+    "type": "object",
+    "properties": {
+      "ad_unit_ids": {
+        "$ref": "#/definitions/proto.Int64Slice"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      }
+    }
+  },
+  "proto.AdUnitGroupResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitGroup"
+      },
+      "message": {
+        "$ref": "#/definitions/proto.Message"
+      }
+    }
+  },
+  "proto.AdUnitItems": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.AdUnit"
+        }
+      }
+    }
+  },
+  "proto.AdUnitPackage": {
+    "type": "object",
+    "properties": {
+      "CPM_distribution": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "external_id": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "link_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "packed_ad_units": {
+        "$ref": "#/definitions/proto.PackedAdUnits"
+      },
+      "primary_ad_unit_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      }
+    }
+  },
+  "proto.AdUnitPackageItems": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "ad_unit_packages": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.AdUnitPackage"
+        }
+      }
+    }
+  },
+  "proto.AdUnitPackageRequestBody": {
+    "type": "object",
+    "properties": {
+      "CPM_distribution": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.SimpleAdUnitList"
+        }
+      },
+      "external_id": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "link_type": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "packed_ad_units": {
+        "$ref": "#/definitions/proto.PackedAdUnits"
+      },
+      "primary_ad_unit_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      }
+    }
+  },
+  "proto.AdUnitPackageResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitPackage"
+      },
+      "message": {
+        "$ref": "#/definitions/proto.Message"
+      }
+    }
+  },
+  "proto.AdUnitRequest": {
+    "type": "object",
+    "properties": {
+      "base_ad_unit": {
+        "type": "array",
+        "items": {
+          "description": "Creatable, Updatable, at least one element, valid if not sequenced",
+          "$ref": "#/definitions/wtypes.Int64"
+        }
+      },
+      "budget_exempt": {
+        "description": "Creatable, Updatable, ad_unit.budget_exempt",
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "created_type": {
+        "description": "Creatable, ad_unit.created_type",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "default_duration": {
+        "description": "Creatable, Updatable, ad_unit.default_duration",
+        "$ref": "#/definitions/wtypes.Int32"
+      },
+      "height": {
+        "description": "Creatable, Updatable, ad_unit.height",
+        "$ref": "#/definitions/wtypes.Int32"
+      },
+      "name": {
+        "description": "Creatable, Updatable",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "parent_ad_unit_id": {
+        "description": "Creatable, Updatable, valid only when sequenced valid",
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "position_in_slot": {
+        "description": "Creatable, Updatable, valid only when sequenced valid",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "sequenced": {
+        "description": "Creatable, Updatable, indicate sequenced variant or not, work together with slot_type_override, position and parent_ad_unit_id",
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "slot_sequence": {
+        "description": "Creatable, Updatable, valid only when sequenced valid",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_type": {
+        "description": "Creatable, Updatable, lu_ad_slot.name, only 1,2,3,4,5,46 used",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "description": "Creatable, Updatable",
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "width": {
+        "description": "Creatable, Updatable, ad_unit.width",
+        "$ref": "#/definitions/wtypes.Int32"
+      }
+    }
+  },
+  "proto.AdUnitResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnit"
+      },
+      "message": {
+        "$ref": "#/definitions/proto.Message"
+      }
+    }
+  },
+  "proto.BaseAdUnit": {
+    "type": "object",
+    "properties": {
+      "assign_type": {
+        "type": "string"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "proto.BatchRequest": {
+    "type": "object",
+    "properties": {
+      "ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  },
+  "proto.CreateAdUnitGroupRequest": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitGroupRequestBody"
+      }
+    }
+  },
+  "proto.CreateAdUnitPackageRequest": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitPackageRequestBody"
+      }
+    }
+  },
+  "proto.CreateAdUnitRequest": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitRequest"
+      }
+    }
+  },
+  "proto.FailureItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "messages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "proto.FailureList": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.FailureItem"
+        }
+      }
+    }
+  },
+  "proto.GeneralAdUnit": {
+    "type": "object",
+    "properties": {
+      "ad_slot_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "base_ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.BaseAdUnit"
+        }
+      },
+      "base_slot_type": {
+        "type": "string"
+      },
+      "budget_exempt": {
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "created_type": {
+        "type": "string"
+      },
+      "data_provider_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "default_duration": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "height": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "is_tracking_only": {
+        "$ref": "#/definitions/wtypes.Bool"
+      },
+      "name": {
+        "type": "string"
+      },
+      "network_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "parent_ad_unit_id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "position_in_slot": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "repeat_factor": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "slot_sequence": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "slot_type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "width": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.GeneralAdUnitItems": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.GeneralAdUnit"
+        }
+      }
+    }
+  },
+  "proto.GetAdUnitGroupRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_group_id": {
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "proto.GetAdUnitPackageRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_package_id": {
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "proto.GetAdUnitRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_id": {
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "proto.Int64Slice": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "Value": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  },
+  "proto.ListAdUnitGroupResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.ListAdUnitGroupResponse.Data"
+      }
+    }
+  },
+  "proto.ListAdUnitGroupResponse.Data": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "$ref": "#/definitions/proto.AdUnitGroupItems"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListAdUnitPackageResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.ListAdUnitPackageResponse.Data"
+      }
+    }
+  },
+  "proto.ListAdUnitPackageResponse.Data": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "$ref": "#/definitions/proto.AdUnitPackageItems"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListAdUnitResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.ListAdUnitResponse.Data"
+      }
+    }
+  },
+  "proto.ListAdUnitResponse.Data": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "$ref": "#/definitions/proto.AdUnitItems"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListGeneralAdUnitResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.ListGeneralAdUnitResponse.Data"
+      }
+    }
+  },
+  "proto.ListGeneralAdUnitResponse.Data": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "$ref": "#/definitions/proto.GeneralAdUnitItems"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListLuAdSlotsResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.LuAdSlots"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListLuBaseAdUnitsResponse": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "$ref": "#/definitions/proto.LuBaseAdUnits"
+      },
+      "page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "per_page": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "total_pages": {
+        "$ref": "#/definitions/wtypes.Int64"
+      }
+    }
+  },
+  "proto.ListRequest": {
+    "type": "object",
+    "properties": {
+      "fields": {
+        "type": "string"
+      },
+      "ids": {
+        "type": "string"
+      },
+      "pagination": {
+        "type": "string"
+      },
+      "search": {
+        "type": "string"
+      },
+      "show": {
+        "type": "string"
+      },
+      "sort": {
+        "type": "string"
+      }
+    }
+  },
+  "proto.LuAdSlot": {
+    "type": "object",
+    "properties": {
+      "base_slot_type": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      },
+      "slot_sequence": {
+        "type": "number",
+        "format": "int32"
+      },
+      "slot_type": {
+        "type": "string"
+      }
+    }
+  },
+  "proto.LuAdSlots": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.LuAdSlot"
+        }
+      }
+    }
+  },
+  "proto.LuBaseAdUnit": {
+    "type": "object",
+    "properties": {
+      "default_globally_visible": {
+        "$ref": "#/definitions/wtypes.Int32"
+      },
+      "description": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      },
+      "slot_type": {
+        "type": "string"
+      }
+    }
+  },
+  "proto.LuBaseAdUnits": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.LuBaseAdUnit"
+        }
+      }
+    }
+  },
+  "proto.Message": {
+    "type": "object",
+    "properties": {
+      "errors": {
+        "$ref": "#/definitions/proto.StringSlice"
+      },
+      "id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      },
+      "warnings": {
+        "$ref": "#/definitions/proto.StringSlice"
+      }
+    }
+  },
+  "proto.PackedAdUnit": {
+    "type": "object",
+    "properties": {
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "event_value": {
+        "$ref": "#/definitions/wtypes.Double"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      }
+    }
+  },
+  "proto.PackedAdUnits": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.PackedAdUnit"
+        }
+      }
+    }
+  },
+  "proto.SimpleAdUnit": {
+    "type": "object",
+    "properties": {
+      "created_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      },
+      "id": {
+        "$ref": "#/definitions/wtypes.Int64"
+      },
+      "name": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "status": {
+        "$ref": "#/definitions/wtypes.String"
+      },
+      "updated_at": {
+        "$ref": "#/definitions/wtypes.Time"
+      }
+    }
+  },
+  "proto.SimpleAdUnitList": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "ad_units": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/proto.SimpleAdUnit"
+        }
+      }
+    }
+  },
+  "proto.StringSlice": {
+    "type": "object",
+    "properties": {
+      "Valid": {
+        "type": "boolean"
+      },
+      "Value": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "proto.UpdateAdUnitGroupRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_group_id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitGroupRequestBody"
+      }
+    }
+  },
+  "proto.UpdateAdUnitPackageRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_package_id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitPackageRequestBody"
+      }
+    }
+  },
+  "proto.UpdateAdUnitRequest": {
+    "type": "object",
+    "properties": {
+      "ad_unit_id": {
+        "type": "string",
+        "format": "int64"
+      },
+      "data": {
+        "$ref": "#/definitions/proto.AdUnitRequest"
+      },
+      "force_apply": {
+        "type": "boolean"
+      }
+    }
+  },
+  "uint64": {
+    "type": "object"
+  },
+  "wtypes.Bool": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "boolean"
+      }
+    }
+  },
+  "wtypes.Bytes": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "$ref": "#/definitions/bytes"
+      }
+    }
+  },
+  "wtypes.CustomizedMetadataMap": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/wtypes.CustomizedMetadataMap.ValueEntry"
+        }
+      }
+    }
+  },
+  "wtypes.CustomizedMetadataMap.ValueEntry": {
+    "type": "object",
+    "properties": {
+      "key": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  },
+  "wtypes.Double": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "number",
+        "format": "double"
+      }
+    }
+  },
+  "wtypes.Float": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "number",
+        "format": "float"
+      }
+    }
+  },
+  "wtypes.Int32": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "number",
+        "format": "int32"
+      }
+    }
+  },
+  "wtypes.Int64": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "wtypes.Int64Slice": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  },
+  "wtypes.String": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  },
+  "wtypes.StringMap": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/wtypes.StringMap.ValueEntry"
+        }
+      }
+    }
+  },
+  "wtypes.StringMap.ValueEntry": {
+    "type": "object",
+    "properties": {
+      "key": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  },
+  "wtypes.StringSlice": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "wtypes.Time": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "$ref": "#/definitions/wtypes.TimeSec"
+      }
+    }
+  },
+  "wtypes.TimeSec": {
+    "type": "object",
+    "properties": {
+      "nsec": {
+        "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999 inclusive.",
+        "type": "number",
+        "format": "int32"
+      },
+      "sec": {
+        "description": "Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z.\nMust be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.",
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  },
+  "wtypes.UInt32": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "number",
+        "format": "uint32"
+      }
+    }
+  },
+  "wtypes.UInt64": {
+    "type": "object",
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "value": {
+        "$ref": "#/definitions/uint64"
+      }
+    }
+  }
+}

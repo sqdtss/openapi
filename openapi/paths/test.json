@@ -1,0 +1,298 @@
+{
+  "/proto.AdUnitGroupService/GetAdUnitGroup": {
+    "get": {
+      "description": "GET /ad_unit_groups/{ad_unit_group_id} \u003cbr\u003e Get ad unit group by ID \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "Customer"
+      ],
+      "summary": "/ad_unit_groups/{ad_unit_group_id}",
+      "operationId": "/proto.AdUnitGroupService/GetAdUnitGroup",
+      "parameters": [
+        {
+          "type": "string",
+          "format": "int64",
+          "name": "ad_unit_group_id",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ad_unit_group_id": {
+                "type": "string",
+                "format": "int64"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.AdUnitGroupResponse.json"
+          }
+        }
+      }
+    }
+  },
+  "/proto.AdUnitGroupService/ListAdUnitGroup": {
+    "get": {
+      "description": "GET /ad_unit_groups \u003cbr\u003e List ad unit groups \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "AdUnit"
+      ],
+      "summary": "/ad_unit_groups",
+      "operationId": "/proto.AdUnitGroupService/ListAdUnitGroup",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "string"
+              },
+              "ids": {
+                "type": "string"
+              },
+              "pagination": {
+                "type": "string"
+              },
+              "search": {
+                "type": "string"
+              },
+              "show": {
+                "type": "string"
+              },
+              "sort": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.ListAdUnitGroupResponse.json"
+          }
+        }
+      }
+    }
+  },
+  "/proto.AdUnitService/ListGeneralAdUnits": {
+    "get": {
+      "description": "GET /general_ad_units \u003cbr\u003e List general ad units \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "GeneralAdUnit"
+      ],
+      "summary": "/general_ad_units",
+      "operationId": "/proto.AdUnitService/ListGeneralAdUnits",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "string"
+              },
+              "ids": {
+                "type": "string"
+              },
+              "pagination": {
+                "type": "string"
+              },
+              "search": {
+                "type": "string"
+              },
+              "show": {
+                "type": "string"
+              },
+              "sort": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.ListGeneralAdUnitResponse.json"
+          }
+        }
+      }
+    }
+  },
+  "/proto.AdUnitGroupService/CreateAdUnitGroup": {
+    "post": {
+      "description": "GET /ad_unit_groups/{ad_unit_group_id} \u003cbr\u003e Get ad unit group by ID \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "AdUnit"
+      ],
+      "summary": "/ad_unit_groups/{ad_unit_group_id}",
+      "operationId": "/proto.AdUnitGroupService/CreateAdUnitGroup",
+      "parameters": [
+        {
+          "type": "string",
+          "format": "int64",
+          "name": "ad_unit_group_id",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ad_unit_group_id": {
+                "type": "string",
+                "format": "int64"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.AdUnitGroupResponse.json"
+          }
+        }
+      }
+    }
+  },
+  "/proto.AdUnitGroupService/ListLuAdSlots": {
+    "get": {
+      "description": "GET /ad_unit_groups/{ad_unit_group_id} \u003cbr\u003e Get ad unit group by ID \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "Lu"
+      ],
+      "summary": "/ad_unit_groups/{ad_unit_group_id}",
+      "operationId": "/proto.AdUnitGroupService/ListLuAdSlots",
+      "parameters": [
+        {
+          "type": "string",
+          "format": "int64",
+          "name": "ad_unit_group_id",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ad_unit_group_id": {
+                "type": "string",
+                "format": "int64"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.AdUnitGroupResponse.json"
+          }
+        }
+      }
+    }
+  },
+  "/proto.AdUnitGroupService/ListVisibleBaseAdUnits": {
+    "get": {
+      "description": "GET /ad_unit_groups/{ad_unit_group_id} \u003cbr\u003e Get ad unit group by ID \u003cbr\u003e No network functions defined",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "Lu"
+      ],
+      "summary": "/ad_unit_groups/{ad_unit_group_id}",
+      "operationId": "/proto.AdUnitGroupService/ListVisibleBaseAdUnits",
+      "parameters": [
+        {
+          "type": "string",
+          "format": "int64",
+          "name": "ad_unit_group_id",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ad_unit_group_id": {
+                "type": "string",
+                "format": "int64"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "",
+          "schema": {
+            "$ref": "../definitions/test/proto.AdUnitGroupResponse.json"
+          }
+        }
+      }
+    }
+  }
+}

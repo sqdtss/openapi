@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "Valid": {
+      "type": "boolean"
+    },
+    "ad_unit_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "./proto.AdUnitGroup.json"
+      }
+    }
+  }
+}

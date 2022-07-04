@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean"
+    },
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "./wtypes.CustomizedMetadataMap.ValueEntry"
+      }
+    }
+  }
+}

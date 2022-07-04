@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean"
+    },
+    "value": {
+      "type": "number",
+      "format": "uint32"
+    }
+  }
+}

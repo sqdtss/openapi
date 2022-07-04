@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "ad_slot_id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "base_ad_units": {
+      "type": "array",
+      "items": {
+        "$ref": "./proto.BaseAdUnit.json"
+      }
+    },
+    "base_slot_type": {
+      "type": "string"
+    },
+    "budget_exempt": {
+      "$ref": "./wtypes.Bool.json"
+    },
+    "created_at": {
+      "$ref": "./wtypes.Time.json"
+    },
+    "created_type": {
+      "type": "string"
+    },
+    "data_provider_id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "default_duration": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "height": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "is_tracking_only": {
+      "$ref": "./wtypes.Bool.json"
+    },
+    "name": {
+      "type": "string"
+    },
+    "network_id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "parent_ad_unit_id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "position_in_slot": {
+      "$ref": "./wtypes.String.json"
+    },
+    "repeat_factor": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "slot_sequence": {
+      "$ref": "./wtypes.String.json"
+    },
+    "slot_type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "updated_at": {
+      "$ref": "./wtypes.Time.json"
+    },
+    "width": {
+      "$ref": "./wtypes.Int64.json"
+    }
+  }
+}

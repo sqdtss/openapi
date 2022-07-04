@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "host" : "127.0.0.1",
+  "basePath": "/",
+  "schemes" : [ "http", "https", "ws", "wss" ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Example.com",
+    "termsOfService": "https://example.com/terms/",
+    "contact": {
+      "email": "contact@example.com",
+      "url": "http://example.com/contact"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "https://redocly.github.io/openapi-template/logo.png"
+    }
+  },
+  "x-tagGroups": [
+    {
+      "name": "AdUnitService",
+      "tags": [
+        "AdUnit",
+        "GeneralAdUnit",
+        "Lu"
+      ]
+    },
+    {
+      "name": "Customers",
+      "tags": ["Customers"]
+    }
+    ],
+  "paths": {
+    "$ref": "paths/test.json"
+  }
+}

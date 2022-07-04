@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "errors": {
+      "$ref": "./proto.StringSlice.json"
+    },
+    "id": {
+      "type": "string",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "warnings": {
+      "$ref": "./proto.StringSlice.json"
+    }
+  }
+}

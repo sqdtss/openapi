@@ -1,0 +1,40 @@
+# See https://redocly.com/docs/cli/configuration/ for more information.
+apis:
+  main:
+    root: openapi/openapi.json
+    lint:
+      rules:
+        path-parameters-defined:
+          severity: warn
+        boolean-parameter-prefixes:
+          severity: warn
+        paths-kebab-case:
+          severity: warn
+        no-unresolved-refs:
+          severity: warn
+lint:
+  rules:
+    path-parameters-defined: warn
+    boolean-parameter-prefixes: warn
+    paths-kebab-case: warn
+    no-unresolved-refs: warn
+  doNotResolveExamples: false
+  extends:
+    - recommended
+features.openapi:
+  ctrlFHijack: true
+  htmlTemplate: ./docs/index.html
+  nativeScrollbars: true
+  searchMaxDepth: 10
+  jsonSampleExpandLevel: Infinity
+  theme:
+    colors:
+      primary:
+        main: "#382975"
+  generateCodeSamples:
+    languages:  # Array of language config objects; indicates in which languages to generate code samples.
+      - lang: curl
+      - lang: Go
+      - lang: JavaScript
+      - lang: PHP
+      - lang: Python

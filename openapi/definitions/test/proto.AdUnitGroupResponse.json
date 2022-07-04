@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "./proto.AdUnitGroup.json"
+    },
+    "message": {
+      "$ref": "./proto.Message.json"
+    }
+  }
+}

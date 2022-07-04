@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "./proto.ListGeneralAdUnitResponse.Data.json"
+    }
+  }
+}

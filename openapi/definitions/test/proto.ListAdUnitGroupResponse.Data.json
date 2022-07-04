@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "$ref": "./proto.AdUnitGroupItems.json"
+    },
+    "page": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "per_page": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "total": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "total_pages": {
+      "$ref": "./wtypes.Int64.json"
+    }
+  }
+}

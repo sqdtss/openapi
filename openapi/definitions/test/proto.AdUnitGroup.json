@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "ad_units": {
+      "$ref": "./proto.SimpleAdUnitList.json"
+    },
+    "base_slot_type": {
+      "$ref": "./wtypes.String.json"
+    },
+    "created_at": {
+      "$ref": "./wtypes.Time.json"
+    },
+    "id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "name": {
+      "$ref": "./wtypes.String.json"
+    },
+    "slot_type": {
+      "$ref": "./wtypes.String.json"
+    },
+    "status": {
+      "$ref": "./wtypes.String.json"
+    },
+    "updated_at": {
+      "$ref": "./wtypes.Time.json"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "assign_type": {
+      "type": "string"
+    },
+    "id": {
+      "$ref": "./wtypes.Int64.json"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

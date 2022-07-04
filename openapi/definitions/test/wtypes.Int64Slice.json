@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean"
+    },
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "int64"
+      }
+    }
+  }
+}
